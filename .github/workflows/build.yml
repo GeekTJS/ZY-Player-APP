@@ -1,4 +1,4 @@
-name: UniApp Build
+name: UniApp Android APK Build
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-h5:
-    name: Build H5
+  build-android-apk:
+    name: Build Android APK
     runs-on: ubuntu-latest
     
     steps:
@@ -25,19 +25,64 @@ jobs:
     - name: Install dependencies
       run: npm install
     
-    - name: Build H5
-      run: npm run build:h5
+    - name: Build App Resources
+      run: npm run build:app
     
-    - name: Upload H5 artifacts
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+    
+    - name: Install Android Build Tools
+      run: |
+        sdkmanager "build-tools;33.0.0"
+        sdkmanager "platforms;android-33"
+    
+    - name: Build APK
+      run: |
+        cd dist/build/app
+        chmod +x gradlew
+        ./gradlew assembleRelease
+      env:
+        ANDROID_HOME: ${{ env.ANDROID_SDK_ROOT }}
+    
+    - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: h5-build
-        path: dist/build/h5
-        retention-days: 7
+        name: ZY-Player-APK
+        path: dist/build/app/build/outputs/apk/release/*.apk
+        retention-days: 30
     
-    - name: Deploy to GitHub Pages
+    - name: Create Release
       if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
+      uses: softprops/action-gh-release@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/build/h5
+        files: dist/build/app/build/outputs/apk/release/*.apk
+        tag_name: v${{ github.run_number }}
+        name: ZY-Player Release v${{ github.run_number }}
+        body: |
+          ZY-Player Android APK 构建完成
+          
+          ## 安装说明
+          
+          ### 真我GT6手机
+          1. 下载 APK 文件
+          2. 允许安装未知来源应用
+          3. 点击安装
+          
+          ### 小米电视
+          1. 将 APK 复制到 U 盘
+          2. 插入电视 USB 接口
+          3. 使用文件管理器安装
+          
+          ## 功能特性
+          - 影视浏览与搜索
+          - 视频播放
+          - 收藏与历史记录
+          - 支持手机和电视双端
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
