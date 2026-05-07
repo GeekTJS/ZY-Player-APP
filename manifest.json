@@ -1,0 +1,27 @@
+{
+    "appId" : "__UNI__ZYPLAYER",
+    "setting" : {
+        "urlCheck" : false
+    },
+    "condition" : {
+        "miniprogram" : {
+            "list" : [
+                {
+                    "name" : "首页",
+                    "pathName" : "pages/index/index",
+                    "query" : ""
+                }
+            ]
+        }
+    },
+    "appid" : "__UNI__3C70CE7",
+    "name" : "自用tv",
+    "versionName" : "1.0",
+    "app-plus" : {
+        "distribute" : {
+            "ios" : {
+                "dSYMs" : false
+            }
+        }
+    }
+}

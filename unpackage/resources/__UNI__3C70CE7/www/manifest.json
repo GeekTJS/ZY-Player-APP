@@ -1,0 +1,100 @@
+{
+    "@platforms" : [ "android", "iPhone", "iPad" ],
+    "description" : "",
+    "developer" : {
+        "email" : "",
+        "name" : "",
+        "url" : ""
+    },
+    "id" : "__UNI__3C70CE7",
+    "launch_path" : "__uniappview.html",
+    "name" : "自用tv",
+    "permissions" : {
+        "UniNView" : {
+            "description" : "UniNView原生渲染"
+        }
+    },
+    "plus" : {
+        "allowsInlineMediaPlayback" : true,
+        "launch_path" : "__uniappview.html",
+        "launchwebview" : {
+            "id" : "1",
+            "kernel" : "WKWebview"
+        },
+        "popGesture" : "close",
+        "safearea" : {
+            "background" : "#ffffff",
+            "bottom" : {
+                "offset" : "auto"
+            }
+        },
+        "splashscreen" : {
+            "autoclose" : true,
+            "delay" : 0,
+            "target" : "id:1",
+            "waiting" : true
+        },
+        "statusbar" : {
+            "background" : "#2C3E50",
+            "immersed" : "supportedDevice",
+            "style" : "light"
+        },
+        "tabBar" : {
+            "backgroundColor" : "#ffffff",
+            "borderStyle" : "rgba(0,0,0,0.4)",
+            "color" : "#999999",
+            "height" : "50px",
+            "list" : [
+                {
+                    "iconPath" : "static/tab/film.png",
+                    "pagePath" : "pages/film/film",
+                    "selectedIconPath" : "static/tab/film-active.png",
+                    "text" : "影视"
+                },
+                {
+                    "iconPath" : "static/tab/iptv.png",
+                    "pagePath" : "pages/iptv/iptv",
+                    "selectedIconPath" : "static/tab/iptv-active.png",
+                    "text" : "直播"
+                },
+                {
+                    "iconPath" : "static/tab/play.png",
+                    "pagePath" : "pages/play/play",
+                    "selectedIconPath" : "static/tab/play-active.png",
+                    "text" : "播放"
+                },
+                {
+                    "iconPath" : "static/tab/star.png",
+                    "pagePath" : "pages/star/star",
+                    "selectedIconPath" : "static/tab/star-active.png",
+                    "text" : "收藏"
+                },
+                {
+                    "iconPath" : "static/tab/setting.png",
+                    "pagePath" : "pages/setting/setting",
+                    "selectedIconPath" : "static/tab/setting-active.png",
+                    "text" : "设置"
+                }
+            ],
+            "selectedColor" : "#409EFF"
+        },
+        "uni-app" : {
+            "compilerVersion" : "5.07",
+            "control" : "uni-v3",
+            "nvue" : {
+                "flex-direction" : "column"
+            },
+            "nvueCompiler" : "uni-app",
+            "nvueLaunchMode" : "normal",
+            "renderer" : "auto"
+        },
+        "useragent" : {
+            "concatenate" : true,
+            "value" : "uni-app"
+        }
+    },
+    "version" : {
+        "name" : "1.0",
+        "code" : 3
+    }
+}

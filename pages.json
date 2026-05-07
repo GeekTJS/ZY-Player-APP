@@ -1,0 +1,100 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "ZY-Player"
+      }
+    },
+    {
+      "path": "pages/film/film",
+      "style": {
+        "navigationBarTitleText": "影视浏览"
+      }
+    },
+    {
+      "path": "pages/iptv/iptv",
+      "style": {
+        "navigationBarTitleText": "IPTV直播"
+      }
+    },
+    {
+      "path": "pages/star/star",
+      "style": {
+        "navigationBarTitleText": "我的收藏"
+      }
+    },
+    {
+      "path": "pages/history/history",
+      "style": {
+        "navigationBarTitleText": "历史记录"
+      }
+    },
+    {
+      "path": "pages/setting/setting",
+      "style": {
+        "navigationBarTitleText": "设置"
+      }
+    },
+    {
+      "path": "pages/play/play",
+      "style": {
+        "navigationBarTitleText": "播放",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/detail/detail",
+      "style": {
+        "navigationBarTitleText": "详情",
+        "app-plus": {
+          "animationType": "slide-in-bottom"
+        }
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "ZY-Player",
+    "navigationBarBackgroundColor": "#2C3E50",
+    "backgroundColor": "#F8F8F8",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#409EFF",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/film/film",
+        "text": "影视"
+      },
+      {
+        "pagePath": "pages/iptv/iptv",
+        "text": "直播"
+      },
+      {
+        "pagePath": "pages/star/star",
+        "text": "收藏"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "设置"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+    }
+  }
+}

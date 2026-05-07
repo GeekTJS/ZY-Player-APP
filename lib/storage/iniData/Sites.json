@@ -1,0 +1,12 @@
+[
+  {
+    "key": "hongniu",
+    "name": "红牛影视",
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod/at/xml/",
+    "download": "",
+    "jiexiUrl": "",
+    "isActive": true,
+    "group": "默认",
+    "reverseOrder": false
+  }
+]
