@@ -1,26 +1,71 @@
 {
-    "appId" : "__UNI__ZYPLAYER",
-    "setting" : {
-        "urlCheck" : false
+    "appId": "__UNI__ZYPLAYER",
+    "name": "ZY-Player",
+    "versionName": "1.0.0",
+    "versionCode": "100",
+    "description": "ZY-Player 视频资源播放器 - 支持手机和电视",
+    "transformPx": false,
+    "setting": {
+        "urlCheck": false
     },
-    "condition" : {
-        "miniprogram" : {
-            "list" : [
+    "condition": {
+        "miniprogram": {
+            "list": [
                 {
-                    "name" : "首页",
-                    "pathName" : "pages/index/index",
-                    "query" : ""
+                    "name": "首页",
+                    "pathName": "pages/index/index",
+                    "query": ""
                 }
             ]
         }
     },
-    "appid" : "__UNI__3C70CE7",
-    "name" : "自用tv",
-    "versionName" : "1.0",
-    "app-plus" : {
-        "distribute" : {
-            "ios" : {
-                "dSYMs" : false
+    "app-plus": {
+        "usingComponents": true,
+        "nvueStyleCompiler": "uni-app",
+        "compilerVersion": 3,
+        "splashscreen": {
+            "alwaysShowBeforeRender": true,
+            "waiting": true,
+            "autoclose": true,
+            "delay": 0
+        },
+        "modules": {
+            "VideoPlayer": {}
+        },
+        "distribute": {
+            "android": {
+                "permissions": [
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.REQUEST_INSTALL_PACKAGES\"/>",
+                    "<uses-permission android:name=\"android.permission.FOREGROUND_SERVICE\"/>"
+                ],
+                "abiFilters": ["armeabi-v7a", "arm64-v8a", "x86"],
+                "targetSdkVersion": 33,
+                "minSdkVersion": 21,
+                "usesCleartextTraffic": true,
+                "intent-filter": [
+                    {
+                        "action": "android.intent.action.VIEW",
+                        "category": ["android.intent.category.DEFAULT", "android.intent.category.BROWSABLE"],
+                        "data": {
+                            "scheme": "zyplayer",
+                            "host": "play",
+                            "pathPattern": ".*"
+                        }
+                    }
+                ]
+            },
+            "ios": {
+                "dSYMs": false,
+                "bundleId": "com.zyplayer.app",
+                "privacyDescription": {
+                    "NSPhotoLibraryUsageDescription": "需要访问相册",
+                    "NSCameraUsageDescription": "需要访问相机"
+                }
             }
         }
     }
