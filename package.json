@@ -10,15 +10,15 @@
   },
   "dependencies": {
     "vue": "^3.4.21",
-    "@dcloudio/uni-h5": "^3.0.0-alpha-3080720230601001",
-    "@dcloudio/uni-app": "^3.0.0-alpha-3080720230601001",
-    "@dcloudio/uni-components": "^3.0.0-alpha-3080720230601001"
+    "@dcloudio/uni-h5": "latest",
+    "@dcloudio/uni-app": "latest",
+    "@dcloudio/uni-components": "latest"
   },
   "devDependencies": {
-    "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3080720230601001",
-    "@dcloudio/uni-app-plus": "^3.0.0-alpha-3080720230601001",
-    "@dcloudio/uni-stacktracey": "^3.0.0-alpha-3080720230601001",
-    "@dcloudio/uni-automator": "^3.0.0-alpha-3080720230601001",
+    "@dcloudio/uni-cli-shared": "latest",
+    "@dcloudio/uni-app-plus": "latest",
+    "@dcloudio/uni-stacktracey": "latest",
+    "@dcloudio/uni-automator": "latest",
     "vite": "^5.0.0",
     "sass": "^1.70.0"
   }
