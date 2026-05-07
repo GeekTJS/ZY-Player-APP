@@ -12,7 +12,7 @@
     "vue": "^3.4.21"
   },
   "devDependencies": {
-    "@dcloudio/vite-plugin-uni": "3.0.0-4010520250507001",
+    "@dcloudio/vite-plugin-uni": "latest",
     "vite": "^5.0.0",
     "sass": "^1.70.0"
   }
